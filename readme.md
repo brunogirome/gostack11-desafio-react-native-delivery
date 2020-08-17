@@ -111,7 +111,6 @@ Para esse desafio, temos os seguintes testes:
 
 ![Application Screenshot](/.github/app.png)
 
-
 ---
 
 Readme feito com 💜 by Rocketseat :wave: [Link do repositório.](https://github.com/rocketseat-education/bootcamp-gostack-desafios/tree/master/desafio-react-native-delivery)
