@@ -22,6 +22,7 @@ import {
   FoodList,
   Food,
   FoodImageContainer,
+  FoodImage,
   FoodContent,
   FoodTitle,
   FoodDescription,
@@ -68,12 +69,12 @@ const Dashboard: React.FC = () => {
 
       const findFood = response.data as Food[];
 
-      setFoods(
-        findFood.map(food => ({
-          ...food,
-          formattedPrice: formatValue(food.price),
-        })),
-      );
+      const updatedFoods = findFood.map(food => ({
+        ...food,
+        formattedPrice: formatValue(food.price),
+      }));
+
+      setFoods(updatedFoods);
     }
 
     loadFoods();
@@ -150,10 +151,7 @@ const Dashboard: React.FC = () => {
                   testID={`food-${food.id}`}
                 >
                   <FoodImageContainer>
-                    <Image
-                      style={{ width: 88, height: 88 }}
-                      source={{ uri: food.thumbnail_url }}
-                    />
+                    <FoodImage source={{ uri: food.thumbnail_url }} />
                   </FoodImageContainer>
                   <FoodContent>
                     <FoodTitle>{food.name}</FoodTitle>

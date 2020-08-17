@@ -49,6 +49,9 @@ export const Food = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
 
+  width: 100%;
+  height: 120px;
+
   background: #f0f0f5;
   border-radius: 8px;
 
