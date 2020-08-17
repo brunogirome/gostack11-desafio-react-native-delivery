@@ -7,6 +7,7 @@ interface CategoryItemProps {
 export const Container = styled.View`
   flex: 1;
   background: #fff;
+  overflow: hidden;
 `;
 
 export const Header = styled.View`
@@ -21,6 +22,7 @@ export const Header = styled.View`
 export const FilterContainer = styled.View`
   padding: 0 24px;
   margin-top: -28px;
+  z-index: 1;
 `;
 
 export const Title = styled.Text`

@@ -60,21 +60,19 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     async function loadFoods(): Promise<void> {
-      const response = await api.get('foods', {
+      const { data }: { data: Food[] } = await api.get('foods', {
         params: {
           category_like: selectedCategory,
           name_like: searchValue,
         },
       });
 
-      const findFood = response.data as Food[];
-
-      const updatedFoods = findFood.map(food => ({
+      const findFood = data.map(food => ({
         ...food,
         formattedPrice: formatValue(food.price),
       }));
 
-      setFoods(updatedFoods);
+      setFoods(findFood);
     }
 
     loadFoods();
@@ -112,10 +110,10 @@ const Dashboard: React.FC = () => {
           placeholder="Qual comida você procura?"
         />
       </FilterContainer>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, marginTop: -28 }}>
         <ScrollView>
           <CategoryContainer>
-            <Title>Categorias</Title>
+            <Title style={{ marginTop: 28 }}>Categorias</Title>
             <CategorySlider
               contentContainerStyle={{
                 paddingHorizontal: 20,

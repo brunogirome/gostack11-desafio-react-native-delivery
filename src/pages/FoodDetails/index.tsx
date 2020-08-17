@@ -159,11 +159,23 @@ const FoodDetails: React.FC = () => {
       0,
     );
 
-    return formatValue(foodTotal + extraTotal);
+    const totalValue = foodTotal + extraTotal;
+
+    return { formatted: formatValue(totalValue), value: totalValue };
   }, [extras, food, foodQuantity]);
 
   async function handleFinishOrder(): Promise<void> {
-    // Finish the order and save on the API
+    const foodOrder = { ...food, product_id: food.id };
+
+    delete foodOrder.formattedPrice;
+
+    delete foodOrder.id;
+
+    foodOrder.price = cartTotal.value;
+
+    await api.post('orders', foodOrder);
+
+    navigation.navigate('DashboardStack');
   }
 
   // Calculate the correct icon name
@@ -238,7 +250,7 @@ const FoodDetails: React.FC = () => {
         <TotalContainer>
           <Title>Total do pedido</Title>
           <PriceButtonContainer>
-            <TotalPrice testID="cart-total">{cartTotal}</TotalPrice>
+            <TotalPrice testID="cart-total">{cartTotal.formatted}</TotalPrice>
             <QuantityContainer>
               <Icon
                 size={15}
