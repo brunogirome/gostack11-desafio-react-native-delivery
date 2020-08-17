@@ -170,6 +170,331 @@
       ],
       "product_id": 1,
       "id": 5
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 19.9,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 6
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 19.9,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 7
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 19.9,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 8
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 19.9,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 9
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 19.9,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 10
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 19.9,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 11
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 19.9,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 12
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 19.9,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 13
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 19.9,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 14
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 19.9,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 15
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 19.9,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 16
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 19.9,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 17
+    },
+    {
+      "name": "Veggie",
+      "description": "Macarrão com pimentão, ervilha e ervas finas colhidas no himalaia.",
+      "price": 21.9,
+      "category": 2,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food2.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/veggie.png",
+      "extras": [
+        {
+          "id": 3,
+          "name": "Bacon",
+          "value": 1.5
+        }
+      ],
+      "product_id": 2,
+      "id": 18
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 95.6,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 19
+    },
+    {
+      "name": "Ao molho",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
+      "price": 19.9,
+      "category": 1,
+      "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/ao_molho.png",
+      "extras": [
+        {
+          "id": 1,
+          "name": "Bacon",
+          "value": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Frango",
+          "value": 2
+        }
+      ],
+      "product_id": 1,
+      "id": 20
     }
   ],
   "favorites": [

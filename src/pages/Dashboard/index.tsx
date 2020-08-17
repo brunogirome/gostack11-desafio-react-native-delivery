@@ -110,10 +110,10 @@ const Dashboard: React.FC = () => {
           placeholder="Qual comida você procura?"
         />
       </FilterContainer>
-      <View style={{ flex: 1, marginTop: -28 }}>
+      <View style={{ flex: 1, marginTop: -32 }}>
         <ScrollView>
           <CategoryContainer>
-            <Title style={{ marginTop: 28 }}>Categorias</Title>
+            <Title style={{ marginTop: 32 }}>Categorias</Title>
             <CategorySlider
               contentContainerStyle={{
                 paddingHorizontal: 20,

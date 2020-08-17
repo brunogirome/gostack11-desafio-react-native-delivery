@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { Dimensions } from 'react-native';
 
 export const Container = styled.View`
   flex: 1;
@@ -170,4 +171,24 @@ export const IconContainer = styled.View`
   padding: 16px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+`;
+
+export const ConfirmedOrder = styled.View`
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  top: -150px;
+  width: 100%;
+  height: ${Dimensions.get('window').height + 150}px;
+  background: #000;
+  opacity: 0.9;
+`;
+
+export const ConfirmedOrderText = styled.Text`
+  font-weight: bold;
+  color: #fff;
+  font-size: 24px;
+  line-height: 28px;
+  margin-top: 28px;
 `;

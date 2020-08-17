@@ -37,6 +37,8 @@ import {
   FinishOrderButton,
   ButtonText,
   IconContainer,
+  ConfirmedOrder,
+  ConfirmedOrderText,
 } from './styles';
 
 interface Params {
@@ -65,6 +67,7 @@ const FoodDetails: React.FC = () => {
   const [extras, setExtras] = useState<Extra[]>([]);
   const [isFavorite, setIsFavorite] = useState(false);
   const [foodQuantity, setFoodQuantity] = useState(1);
+  const [confirmScreen, setConfirmScreen] = useState(false);
 
   const navigation = useNavigation();
   const route = useRoute();
@@ -175,7 +178,9 @@ const FoodDetails: React.FC = () => {
 
     await api.post('orders', foodOrder);
 
-    navigation.navigate('DashboardStack');
+    setConfirmScreen(true);
+
+    setTimeout(() => navigation.navigate('DashboardStack'), 2000);
   }
 
   // Calculate the correct icon name
@@ -199,88 +204,96 @@ const FoodDetails: React.FC = () => {
   }, [navigation, favoriteIconName, toggleFavorite]);
 
   return (
-    <Container>
-      <Header />
+    <>
+      <Container>
+        <Header />
 
-      <ScrollContainer>
-        <FoodsContainer>
-          <Food>
-            <FoodImageContainer>
-              <Image
-                style={{ width: 327, height: 183 }}
-                source={{
-                  uri: food.image_url,
-                }}
-              />
-            </FoodImageContainer>
-            <FoodContent>
-              <FoodTitle>{food.name}</FoodTitle>
-              <FoodDescription>{food.description}</FoodDescription>
-              <FoodPricing>{food.formattedPrice}</FoodPricing>
-            </FoodContent>
-          </Food>
-        </FoodsContainer>
-        <AdditionalsContainer>
-          <Title>Adicionais</Title>
-          {extras.map(extra => (
-            <AdittionalItem key={extra.id}>
-              <AdittionalItemText>{extra.name}</AdittionalItemText>
-              <AdittionalQuantity>
+        <ScrollContainer>
+          <FoodsContainer>
+            <Food>
+              <FoodImageContainer>
+                <Image
+                  style={{ width: 327, height: 183 }}
+                  source={{
+                    uri: food.image_url,
+                  }}
+                />
+              </FoodImageContainer>
+              <FoodContent>
+                <FoodTitle>{food.name}</FoodTitle>
+                <FoodDescription>{food.description}</FoodDescription>
+                <FoodPricing>{food.formattedPrice}</FoodPricing>
+              </FoodContent>
+            </Food>
+          </FoodsContainer>
+          <AdditionalsContainer>
+            <Title>Adicionais</Title>
+            {extras.map(extra => (
+              <AdittionalItem key={extra.id}>
+                <AdittionalItemText>{extra.name}</AdittionalItemText>
+                <AdittionalQuantity>
+                  <Icon
+                    size={15}
+                    color="#6C6C80"
+                    name="minus"
+                    onPress={() => handleDecrementExtra(extra.id)}
+                    testID={`decrement-extra-${extra.id}`}
+                  />
+                  <AdittionalItemText testID={`extra-quantity-${extra.id}`}>
+                    {extra.quantity}
+                  </AdittionalItemText>
+                  <Icon
+                    size={15}
+                    color="#6C6C80"
+                    name="plus"
+                    onPress={() => handleIncrementExtra(extra.id)}
+                    testID={`increment-extra-${extra.id}`}
+                  />
+                </AdittionalQuantity>
+              </AdittionalItem>
+            ))}
+          </AdditionalsContainer>
+          <TotalContainer>
+            <Title>Total do pedido</Title>
+            <PriceButtonContainer>
+              <TotalPrice testID="cart-total">{cartTotal.formatted}</TotalPrice>
+              <QuantityContainer>
                 <Icon
                   size={15}
                   color="#6C6C80"
                   name="minus"
-                  onPress={() => handleDecrementExtra(extra.id)}
-                  testID={`decrement-extra-${extra.id}`}
+                  onPress={handleDecrementFood}
+                  testID="decrement-food"
                 />
-                <AdittionalItemText testID={`extra-quantity-${extra.id}`}>
-                  {extra.quantity}
+                <AdittionalItemText testID="food-quantity">
+                  {foodQuantity}
                 </AdittionalItemText>
                 <Icon
                   size={15}
                   color="#6C6C80"
                   name="plus"
-                  onPress={() => handleIncrementExtra(extra.id)}
-                  testID={`increment-extra-${extra.id}`}
+                  onPress={handleIncrementFood}
+                  testID="increment-food"
                 />
-              </AdittionalQuantity>
-            </AdittionalItem>
-          ))}
-        </AdditionalsContainer>
-        <TotalContainer>
-          <Title>Total do pedido</Title>
-          <PriceButtonContainer>
-            <TotalPrice testID="cart-total">{cartTotal.formatted}</TotalPrice>
-            <QuantityContainer>
-              <Icon
-                size={15}
-                color="#6C6C80"
-                name="minus"
-                onPress={handleDecrementFood}
-                testID="decrement-food"
-              />
-              <AdittionalItemText testID="food-quantity">
-                {foodQuantity}
-              </AdittionalItemText>
-              <Icon
-                size={15}
-                color="#6C6C80"
-                name="plus"
-                onPress={handleIncrementFood}
-                testID="increment-food"
-              />
-            </QuantityContainer>
-          </PriceButtonContainer>
+              </QuantityContainer>
+            </PriceButtonContainer>
 
-          <FinishOrderButton onPress={() => handleFinishOrder()}>
-            <ButtonText>Confirmar pedido</ButtonText>
-            <IconContainer>
-              <Icon name="check-square" size={24} color="#fff" />
-            </IconContainer>
-          </FinishOrderButton>
-        </TotalContainer>
-      </ScrollContainer>
-    </Container>
+            <FinishOrderButton onPress={() => handleFinishOrder()}>
+              <ButtonText>Confirmar pedido</ButtonText>
+              <IconContainer>
+                <Icon name="check-square" size={24} color="#fff" />
+              </IconContainer>
+            </FinishOrderButton>
+          </TotalContainer>
+        </ScrollContainer>
+      </Container>
+      {confirmScreen && (
+        <ConfirmedOrder>
+          <Icon name="thumbs-up" size={40} color="#39b100" />
+          <ConfirmedOrderText>Pedido confirmado!</ConfirmedOrderText>
+        </ConfirmedOrder>
+      )}
+    </>
   );
 };
 
