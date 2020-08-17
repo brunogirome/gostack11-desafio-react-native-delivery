@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Image, ScrollView } from 'react-native';
+import { Image, ScrollView, View } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/native';
@@ -54,12 +54,26 @@ const Dashboard: React.FC = () => {
   const navigation = useNavigation();
 
   async function handleNavigate(id: number): Promise<void> {
-    // Navigate do ProductDetails page
+    navigation.navigate('FoodDetails', { id });
   }
 
   useEffect(() => {
     async function loadFoods(): Promise<void> {
-      // Load Foods from API
+      const response = await api.get('foods', {
+        params: {
+          category_like: selectedCategory,
+          name_like: searchValue,
+        },
+      });
+
+      const findFood = response.data as Food[];
+
+      setFoods(
+        findFood.map(food => ({
+          ...food,
+          formattedPrice: formatValue(food.price),
+        })),
+      );
     }
 
     loadFoods();
@@ -67,14 +81,16 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     async function loadCategories(): Promise<void> {
-      // Load categories from API
+      const response = await api.get('categories');
+
+      setCategories(response.data);
     }
 
     loadCategories();
   }, []);
 
   function handleSelectCategory(id: number): void {
-    // Select / deselect category
+    setSelectedCategory(selectedCategory === id ? undefined : id);
   }
 
   return (
@@ -95,59 +111,61 @@ const Dashboard: React.FC = () => {
           placeholder="Qual comida você procura?"
         />
       </FilterContainer>
-      <ScrollView>
-        <CategoryContainer>
-          <Title>Categorias</Title>
-          <CategorySlider
-            contentContainerStyle={{
-              paddingHorizontal: 20,
-            }}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-          >
-            {categories.map(category => (
-              <CategoryItem
-                key={category.id}
-                isSelected={category.id === selectedCategory}
-                onPress={() => handleSelectCategory(category.id)}
-                activeOpacity={0.6}
-                testID={`category-${category.id}`}
-              >
-                <Image
-                  style={{ width: 56, height: 56 }}
-                  source={{ uri: category.image_url }}
-                />
-                <CategoryItemTitle>{category.title}</CategoryItemTitle>
-              </CategoryItem>
-            ))}
-          </CategorySlider>
-        </CategoryContainer>
-        <FoodsContainer>
-          <Title>Pratos</Title>
-          <FoodList>
-            {foods.map(food => (
-              <Food
-                key={food.id}
-                onPress={() => handleNavigate(food.id)}
-                activeOpacity={0.6}
-                testID={`food-${food.id}`}
-              >
-                <FoodImageContainer>
+      <View style={{ flex: 1 }}>
+        <ScrollView>
+          <CategoryContainer>
+            <Title>Categorias</Title>
+            <CategorySlider
+              contentContainerStyle={{
+                paddingHorizontal: 20,
+              }}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+            >
+              {categories.map(category => (
+                <CategoryItem
+                  key={category.id}
+                  isSelected={category.id === selectedCategory}
+                  onPress={() => handleSelectCategory(category.id)}
+                  activeOpacity={0.6}
+                  testID={`category-${category.id}`}
+                >
                   <Image
-                    style={{ width: 88, height: 88 }}
-                    source={{ uri: food.thumbnail_url }}
+                    style={{ width: 56, height: 56 }}
+                    source={{ uri: category.image_url }}
                   />
-                </FoodImageContainer>
-                <FoodContent>
-                  <FoodTitle>{food.name}</FoodTitle>
-                  <FoodDescription>{food.description}</FoodDescription>
-                  <FoodPricing>{food.formattedPrice}</FoodPricing>
-                </FoodContent>
-              </Food>
-            ))}
-          </FoodList>
-        </FoodsContainer>
-      </ScrollView>
+                  <CategoryItemTitle>{category.title}</CategoryItemTitle>
+                </CategoryItem>
+              ))}
+            </CategorySlider>
+          </CategoryContainer>
+          <FoodsContainer>
+            <Title>Pratos</Title>
+            <FoodList>
+              {foods.map(food => (
+                <Food
+                  key={food.id}
+                  onPress={() => handleNavigate(food.id)}
+                  activeOpacity={0.6}
+                  testID={`food-${food.id}`}
+                >
+                  <FoodImageContainer>
+                    <Image
+                      style={{ width: 88, height: 88 }}
+                      source={{ uri: food.thumbnail_url }}
+                    />
+                  </FoodImageContainer>
+                  <FoodContent>
+                    <FoodTitle>{food.name}</FoodTitle>
+                    <FoodDescription>{food.description}</FoodDescription>
+                    <FoodPricing>{food.formattedPrice}</FoodPricing>
+                  </FoodContent>
+                </Food>
+              ))}
+            </FoodList>
+          </FoodsContainer>
+        </ScrollView>
+      </View>
     </Container>
   );
 };
